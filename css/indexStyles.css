@@ -1,0 +1,452 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #ccc5c5;
+}
+
+
+
+/* ------HEADER---- */
+
+
+
+header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: #e9e6e6;
+    position: fixed;
+    
+}   
+    
+.logo{
+    width: 10vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    font-family: Impact;
+    font-size: 20px; 
+    width: 80%;
+    margin: 10px;   
+}
+
+nav a{
+    text-decoration: none;
+    color: #1F1C1E;
+}
+nav a:hover{
+    color: rgb(87, 85, 85);
+}
+
+
+/* -----MAIN----- */
+
+
+
+
+main{
+    font-family: Impact; color: #1F1C1E;
+    padding-top: 100px;
+    
+}
+.descuento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #1F1C1E;
+    color: #e9e6e6;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.botonComprar{
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #1F1C1E; 
+    color: #B5B5B5;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    border: none;
+}    
+.botonComprar:hover{
+    color: white;
+}
+
+
+
+/* ------ GRID------- */
+
+
+
+.indexgrid{
+    display: grid;
+    grid-template-areas: 
+    "newarrivals suscribite spotify"
+    "somostropagrid somostropagrid somostropagrid";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px 100px;
+    
+}
+
+.newarrivals{
+    grid-area: newarrivals;
+    color: rgb(18, 18, 19);
+    padding: 30px;
+    font-size: 30px;
+    text-align: center;
+    align-self: center;
+    
+}  
+
+.suscribite{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    grid-area: suscribite;
+    background-color: tomato;
+    font-size: 30px;
+    padding: 30px;
+}    
+.spotify{
+    grid-area: spotify;
+    font-size: 30px;
+    color: rgb(18, 18, 19);
+    padding-left: 30px;
+    align-self: center;
+    justify-self: center;
+    padding: 20px;
+}
+
+.suscribiteParrafo{
+    font-family:'geneva', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.somostropagrid{
+    grid-area: somostropagrid;
+    font-size: 50px;
+    color:tomato;
+    background-color: #1F1C1E;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+/* -----GRID tienda----- */
+
+
+.gridtienda{
+    display: grid;
+    grid-template-areas: 
+    "newarrivals newarrivals "
+    "cardItems galeriaTienda ";
+    grid-template-columns: 20em 100em;
+    grid-template-rows: 20em 50em;
+    padding: 20px;
+}
+
+.cardImg{
+    padding-left: 30px;
+
+}
+
+.cardSection{
+    display: flex;
+    font-family: Impact;
+    color: #1F1C1E;  
+    margin-top: 30px;  
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+}
+    
+.cardText {
+    padding: 20px;
+}
+
+.cardText h1{
+    text-align: center;
+    font-family: Impact;
+    font-size: 30px;
+}
+.cardItems{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;    
+    font-family: Impact;
+    grid-area: cardItems;
+}
+  
+.cardItems li a{
+    text-decoration: none;
+    color: #1F1C1E;    
+}
+.cardItems li a:hover{
+    color: white;   
+}
+
+.cardSection2{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: #1F1C1E;  
+    margin-top: 30px;  
+    margin-bottom: 30px;
+    justify-content: center;
+    
+}
+.cardSection2 article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+/* -----FOOTER----- */
+
+
+
+#pie{
+    display: flex;
+    flex-direction: column;
+    background-color: #1F1C1E;
+    width: 100%;  
+    padding: 30px;  
+}
+
+.datosContacto li{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    font-family: Impact; 
+    color:#c2bec0;
+    width: 30%;
+    font-family: 'geneva', sans-serif;
+}
+
+.datosContacto li a{
+    display: flex;
+    text-decoration: none;
+    color: #c2bec0;    
+}
+
+
+
+/* -----css TIENDA-----*/
+
+
+.galeriaTienda{
+    display: flex;
+    padding: 20px;
+    grid-area: galeriaTienda;
+    background: tomato;
+    
+
+}
+
+.imagenTextoTienda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'geneva', sans-serif;
+    text-align: center;
+    font-size: 12px;
+    
+}
+
+.imagenTextoTienda img{
+    margin: 10px;
+}
+.imagenTextoTienda p{
+    background-color: rgb(247, 250, 253);
+    padding: 10px;
+    margin: 10px;
+}
+/* -------css SALE------ */
+.salegrid{
+    display: grid;
+    grid-template-areas:
+    "off galeria galeria galeria galeria"
+    "off galeria2 galeria2 galeria2 galeria2"
+    "off vermas vermas vermas vermas";
+    grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 100px;
+    padding: 40px;
+}
+
+.off{
+    font-size: 50px;
+    text-align: center;
+    grid-area: off;
+    
+}
+
+.sectionCatalogo{
+    display: flex;
+    justify-content: space-evenly;
+    grid-area: galeria;
+
+}
+.sectionCatalogo2{
+    display: flex;
+    justify-content: space-evenly;
+    grid-area: galeria2;
+
+}
+
+.cardCatalogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.cardCatalogo img{
+    margin: 20px;
+}
+
+.vermas{
+    display: flex;
+    justify-content: center;
+    color: #1F1C1E;
+    padding: 50px;
+    font-size: 20px;
+    grid-area: vermas;
+}
+
+/* -------css SOMOSTROPA------ */
+
+.somostropagrid{
+    display: grid;
+    grid-template-areas:
+    "somostropa imgnegro" 
+    "somostropa pasos"
+    ;
+    grid-template-columns: 70% 30% ;
+    grid-template-rows: 1fr 1fr ;
+}
+.somostropa{
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-area: somostropa;
+}
+.imgfondonegro{
+    grid-area: imgnegro;
+    wid
+}
+.somostropatext{
+    font-family: 'geneva';
+    font-size: 20px;
+    text-align: justify;
+    padding: 20px;
+    wid
+}
+
+.unodostres{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    color: #1F1C1E;
+    padding: 50px;
+    background-color: tomato;
+    margin-top: 30px;
+    grid-area: pasos;
+
+}
+
+
+
+/* -------css CONTACT------ */
+
+.boxemail{
+    padding-top: 30px;
+}
+
+.boxemail input{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* ----RESPONSIVE / MEDIA QUERY------ */
+
+
+
+
+
+@media screen and (max-width:768px){
+    
+    .indexgrid{
+        grid-template-areas: 
+        "newarrivals"
+        "suscribite"
+        "spotify"
+        "somostropagrid";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto);   
+    }
+    .cardSection, .cardSection2{
+        flex-direction: column-reverse;
+    }    
+    .cardImg{
+        padding-left: 0;
+        width: 100%;
+    }
+    .imgfondonegro{
+        padding-left: 0;
+        width: 100%;}
+
+    .gridtienda{
+    grid-template-areas: 
+    "newarrivals"
+    "cardItems"
+    "galeriaTienda";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    }
+
+    .cardItems{
+        display: flex;
+        justify-content: center;        text-decoration: underline;
+        padding-bottom: 20px;      
+    }        
+    .cardItems li a{
+        padding: 0 10px 0 10px;
+    }
+
+    .galeriaTienda{
+        flex-direction: column;
+    }
+}
