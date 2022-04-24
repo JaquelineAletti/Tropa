@@ -2,12 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 html{
     font-size: 62.5%;
+    
 }
 body{
     background-color: #ccc5c5;
+    
 }
 
 
@@ -23,8 +26,12 @@ header{
     justify-content: center;
     background-color: #e9e6e6;
     position: fixed;
-    
-}   
+    z-index: 500;
+} 
+
+li{
+    list-style-type: none;
+}  
     
 .logo{
     width: 10vh;
@@ -49,7 +56,8 @@ nav a{
     color: #1F1C1E;
 }
 nav a:hover{
-    color: rgb(87, 85, 85);
+    color: rgb(138, 138, 138);
+    transition: 1s;
 }
 
 
@@ -145,16 +153,6 @@ main{
     padding: 10px;
 }
 
-.somostropagrid{
-    grid-area: somostropagrid;
-    font-size: 50px;
-    color:tomato;
-    background-color: #1F1C1E;
-    text-align: center;
-    padding: 20px;
-}
-
-
 
 /* -----GRID tienda----- */
 
@@ -169,11 +167,6 @@ main{
     padding: 20px;
 }
 
-.cardImg{
-    padding-left: 30px;
-
-}
-
 .cardSection{
     display: flex;
     font-family: Impact;
@@ -182,10 +175,48 @@ main{
     margin-bottom: 30px;
     align-items: center;
     justify-content: center;
+
 }
+
+.textoimgcard{
+    font-size: 20px;
+    text-align: justify;
+    position: absolute;
+    top: 42%;
+    padding: 30px 100px 30px 100px;
+    background: white;
+    width: 100%;
+    opacity: 100%;
     
+}
+.textoimgcard:hover{
+    background: tomato;
+   
+    transition: background 0.6s linear;
+} 
+
+
+.cardImg{
+    background-image: url(../imagen/PANTALONES.jpg);
+    width: 697px;
+    height: 500px;
+    position: relative;
+    background-color: #1F1C1E;
+}
+
+.cardImg2{
+    background-image: url(../imagen/outfit2.jpg);
+    width: 697px;
+    height: 500px;
+    position: relative;
+    background-color: #1F1C1E;
+    background-size: cover;
+
+}
+
+
 .cardText {
-    padding: 20px;
+    padding: 100px;
 }
 
 .cardText h1{
@@ -290,14 +321,19 @@ main{
     padding: 10px;
     margin: 10px;
 }
+
+
 /* -------css SALE------ */
+
+
+
 .salegrid{
     display: grid;
     grid-template-areas:
-    "off galeria galeria galeria galeria"
-    "off galeria2 galeria2 galeria2 galeria2"
-    "off vermas vermas vermas vermas";
-    grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+        "off galeria "
+        "off galeria2 "
+        "off vermas ";
+    grid-template-columns: 200px 1fr;
     grid-template-rows: 1fr 1fr 100px;
     padding: 40px;
 }
@@ -350,8 +386,14 @@ main{
     "somostropa imgnegro" 
     "somostropa pasos"
     ;
-    grid-template-columns: 70% 30% ;
+    grid-template-columns: 100% 30% ;
     grid-template-rows: 1fr 1fr ;
+    grid-area: somostropagrid;
+    font-size: 50px;
+    color: tomato;
+    background-color: #1F1C1E;
+    text-align: center;
+    padding: 20px
 }
 .somostropa{
     font-size: 30px;
@@ -362,14 +404,13 @@ main{
 }
 .imgfondonegro{
     grid-area: imgnegro;
-    wid
+
 }
 .somostropatext{
     font-family: 'geneva';
     font-size: 20px;
     text-align: justify;
     padding: 20px;
-    wid
 }
 
 .unodostres{
@@ -424,6 +465,8 @@ main{
         padding-left: 0;
         width: 100%;
     }
+
+    
     .imgfondonegro{
         padding-left: 0;
         width: 100%;}
@@ -450,3 +493,120 @@ main{
         flex-direction: column;
     }
 }
+
+
+
+/* -----ANIMACIONES----- */
+
+
+
+
+.tracking-in-contract {
+	-webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+
+
+
+  .scale-in-hor-center {
+	        animation: scale-in-hor-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  @keyframes scale-in-hor-center {
+    0% {
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+
+  .bounce-right {
+	        animation: bounce-right 0.8s infinite both;
+  }
+
+  @keyframes bounce-right {
+    0% {
+      -webkit-transform: translateX(48px);
+              transform: translateX(48px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      -webkit-transform: translateX(26px);
+              transform: translateX(26px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    65% {
+      -webkit-transform: translateX(13px);
+              transform: translateX(13px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    82% {
+      -webkit-transform: translateX(6.5px);
+              transform: translateX(6.5px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    93% {
+      -webkit-transform: translateX(4px);
+              transform: translateX(4px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87%,
+    98% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+  
