@@ -76,10 +76,12 @@ main{
 }
 
 .botonComprar{
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: #1F1C1E; 
     color: #B5B5B5;
-    padding: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
     font-size: 12px;
     border: none;
@@ -152,18 +154,7 @@ main{
 }
 
 
-/* -----GRID tienda----- */
 
-
-.gridtienda{
-    display: grid;
-    grid-template-areas: 
-    "newarrivals newarrivals "
-    "cardItems galeriaTienda ";
-    grid-template-columns: 20em 100em;
-    grid-template-rows: 20em 50em;
-    padding: 20px;
-}
 
 .cardSection{
     display: flex;
@@ -234,7 +225,7 @@ main{
     color: #1F1C1E;    
 }
 .cardItems li a:hover{
-    color: white;   
+    color: rgb(58, 32, 59);   
 }
 
 .cardSection2{
@@ -268,6 +259,7 @@ main{
     background-color: #1F1C1E;
     width: 100%;  
     padding: 50px; 
+    z-index: 500;
 }
 .textofooter{
     font-size: 12px;    
@@ -323,12 +315,14 @@ i{
 .salegrid{
     display: grid;
     grid-template-areas:
-        "off galeria "
-        "off galeria2 "
-        "off vermas ";
+    "off galeria"
+    "off galeria2"
+    "off vermas";
     grid-template-columns: 200px 1fr;
     grid-template-rows: 1fr 1fr 100px;
     padding: 40px;
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
 .off{
@@ -358,15 +352,11 @@ i{
     
 }
 
-.cardCatalogo img{
-    margin: 20px;
-}
-
 .vermas{
     display: flex;
     justify-content: center;
     color: #1F1C1E;
-    padding: 50px;
+    padding: 30px;
     font-size: 20px;
     grid-area: vermas;
 }
@@ -379,8 +369,8 @@ i{
     "somostropa imgnegro" 
     "somostropa pasos"
     ;
-    grid-template-columns: 100% 30% ;
-    grid-template-rows: 1fr 1fr ;
+    grid-template-columns: 100% 30%;
+    grid-template-rows: 1fr 1fr;
     grid-area: somostropagrid;
     font-size: 50px;
     color: #C17ECE;
@@ -451,35 +441,15 @@ i{
     .cardSection, .cardSection2{
         flex-direction: column-reverse;
     }    
-    .cardImg{
+    .cardImg, .cardImg2{
         padding-left: 0;
         width: 100%;
     }
-
-    .gridtienda{
-    grid-template-areas: 
-    "newarrivals"
-    "cardItems"
-    "galeriaTienda";
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
+    .salegrid{
+    padding-left: 0;
+    width: 100%;
     }
-
-    .cardItems{
-        display: flex;
-        justify-content: center;        text-decoration: underline;
-        padding-bottom: 20px;      
-    }        
-    .cardItems li a{
-        padding: 0 10px 0 10px;
-    }
-
-    .galeriaTienda{
-        flex-direction: column;
-    }
-}
-
-
+} 
 
 /* -----ANIMACIONES----- */
 
