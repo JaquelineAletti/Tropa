@@ -49,6 +49,15 @@ nav {
     margin: 10px;   
 }
 
+.dropdown-menu{
+    border-color:aliceblue;
+    box-shadow: 0px 10px 10px -3px #1F1C1E;
+    font-size: 1.2rem;
+}
+
+.dropdown-item:focus{
+    background: #1F1C1E;
+}
 
 
 /* -----MAIN----- */
@@ -87,17 +96,20 @@ main{
     border: none;
 }    
 .botonComprar:hover{
-    color: white;
-    
+    color: white; 
 }
 .card-title{
     font-size: 30px;
+    color: #e9e6e6;
 }
+.btn{
+    font-size: 1.3rem;
+}
+.btn:hover{
+    color: #63446b;
+    text-shadow: 0px 10px 10px -3px #1F1C1E;
 
-/* ------ GRID------- */
-
-
-
+}
 .indexgrid{
     display: grid;
     grid-template-areas: 
@@ -105,7 +117,6 @@ main{
     "somostropagrid somostropagrid somostropagrid";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 250px 100px;
-    
 }
 
 .newarrivals{
@@ -153,9 +164,6 @@ main{
     padding: 10px;
 }
 
-
-
-
 .cardSection{
     display: flex;
     font-family: Impact;
@@ -164,7 +172,6 @@ main{
     margin-bottom: 30px;
     align-items: center;
     justify-content: center;
-
 }
 
 .textoimgcard{
@@ -175,15 +182,14 @@ main{
     padding: 30px 100px 30px 100px;
     background: white;
     width: 100%;
-    opacity: 100%;
-    
+    opacity: 100%;    
 }
+
 .textoimgcard:hover{
     background: #C17ECE;
    
     transition: background 0.6s linear;
 } 
-
 
 .cardImg{
     background-image: url(../imagen/PANTALONES.jpg);
@@ -200,17 +206,13 @@ main{
     position: relative;
     background-color: #1F1C1E;
     background-size: cover;
-
 }
-
 
 .cardText {
     padding: 100px;
 }
 
 .cardText h1{
-    text-align: center;
-    font-family: Impact;
     font-size: 30px;
 }
 .cardItems{
@@ -219,13 +221,14 @@ main{
     font-size: 20px;    
     font-family: Impact;
     grid-area: cardItems;
+    padding: 0px;
 }
   
 .cardItems li a{
     color: #1F1C1E;    
 }
 .cardItems li a:hover{
-    color: rgb(58, 32, 59);   
+    color: #63446b;  
 }
 
 .cardSection2{
@@ -244,50 +247,27 @@ main{
     align-items: center;
 }
 
-
-
-
-
-/* -----FOOTER----- */
-
-
-
-#pie{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    background-color: #1F1C1E;
-    width: 100%;  
-    padding: 50px; 
-    z-index: 500;
-}
-.textofooter{
-    font-size: 12px;    
-}
-
-i{ 
-    font-size: 25px;
-    color: #e9e6e6;
-    padding: 10px;
-    
-}
-
-
-
-
-/* -----css TIENDA-----*/
+/* -----section TIENDA-----*/
 
 
 .galeriaTienda{
     display: flex;
-    /*padding: 20px;
-    grid-area: galeriaTienda;*/
     background: #C17ECE;
     justify-content: center;
     align-items: center;
 
 }
 
+.img-thumbnail{
+    padding: 20px;
+    border: 0px;
+}
+.card-body{
+    padding: 20px;
+}
+.card-body h2{
+    color: #1F1C1E;
+}
 .imagenTextoTienda{
     display: flex;
     flex-direction: column;
@@ -308,7 +288,7 @@ i{
 }
 
 
-/* -------css SALE------ */
+/* -------section SALE------ */
 
 
 
@@ -325,7 +305,7 @@ i{
     column-gap: 20px;
 }
 
-.off{
+.off h1{
     font-size: 50px;
     text-align: center;
     grid-area: off;
@@ -344,14 +324,28 @@ i{
     grid-area: galeria2;
 
 }
-
-.cardCatalogo{
+button{
+    border-radius: 15px;
+}
+.cardCatalogo, .cardCatalogo2{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    position: relative;
+    align-items: center;  
+    margin: 15px;
 }
-
+.cardCatalogo-text {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #e9e6e6;
+    background-color: black;
+    opacity: 60%;
+    width: 100%;
+    padding: 20px;
+    margin-top: 189px;
+}
 .vermas{
     display: flex;
     justify-content: center;
@@ -360,17 +354,16 @@ i{
     font-size: 20px;
     grid-area: vermas;
 }
-
-/* -------css SOMOSTROPA------ */
+.vermas:hover{
+    color: #63446b;
+    transition: 0.3s;
+}
+.navbar{
+    color: #e9e6e6;
+}
+/* -------section SOMOSTROPA------ */
 
 .somostropagrid{
-    display: grid;
-    grid-template-areas:
-    "somostropa imgnegro" 
-    "somostropa pasos"
-    ;
-    grid-template-columns: 100% 30%;
-    grid-template-rows: 1fr 1fr;
     grid-area: somostropagrid;
     font-size: 50px;
     color: #C17ECE;
@@ -409,16 +402,31 @@ i{
     padding: 50px;
     background-color: #C17ECE;
     margin-top: 30px;
-    grid-area: pasos;
-
 }
 
 
 
-/* -------css CONTACT------ */
+/* -----FOOTER----- */
 
 
+#pie{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #1F1C1E;
+    width: 100%;  
+    padding: 50px; 
+    z-index: 500;
+}
+.textofooter{
+    font-size: 12px;    
+}
 
+i{ 
+    font-size: 25px;
+    color: #e9e6e6;
+    padding: 10px;
+}
 
 
 /* ----RESPONSIVE / MEDIA QUERY------ */
@@ -445,10 +453,16 @@ i{
         padding-left: 0;
         width: 100%;
     }
-    .salegrid{
-    padding-left: 0;
-    width: 100%;
+    .salegrid {
+        display: flex;
+        flex-direction: column;
     }
+    
+    .sectionCatalogo,.sectionCatalogo2 {
+        display: flex;
+        flex-direction: column;
+    }
+
 } 
 
 /* -----ANIMACIONES----- */
