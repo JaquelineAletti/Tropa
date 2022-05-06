@@ -1,0 +1,285 @@
+@import "componentes";
+@import "base";
+@import "colores";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;   
+}
+body{
+    background: $color-blanco;   
+}
+a {
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}  
+.logo{
+    width: 10vh;
+    margin-right: 20px;
+}
+
+.dropdown-menu{
+    border-color:$color-blanco;
+    box-shadow: $box-shadow;
+    font-size: $fontsize-boton;
+}
+
+.dropdown-item{
+    font-family: $tipografia-dos;
+    &:focus{
+        background: $color-negro;
+    }
+}
+header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    z-index: 500;
+    background-color: rgba(160, 101, 147, 0.5) !important;
+}
+nav{
+    font-family: $tipografia-dos;
+    font-size: $size-text; 
+    width: 90%;
+    margin: 10px;
+}
+
+main{
+    font-family: $tipografia-uno; 
+    color: $color-negro;
+    padding-top: 79px;
+    h1{
+        font-size: $size-title;
+        font-family: $tipografia-uno;
+        margin: 0px;
+    }
+    h2{
+        font-size: $size-text;
+        text-align: center;
+        background: $color-negro;
+        color: $color-lilaclaro;
+        padding: 20px;
+        justify-content: center;
+        width: 100%;
+        margin: 0px;
+    }
+}
+
+.indexgrid{
+    display: grid;
+    grid-template-areas: 
+    "newarrivals suscribite spotify"
+    "somostropagrid somostropagrid somostropagrid";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px 100px;
+    .newarrivals{
+        grid-area: newarrivals;
+        padding: 30px;
+        text-align: center;
+        align-self: center;
+        
+    }
+    .suscribite{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        grid-area: suscribite;
+        background: $gradiente-lila;
+        padding: 30px;
+        p{
+        font-family: $tipografia-dos;
+        font-size: 15px;
+        padding: 10px;
+        }
+        div{
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            align-items: center;
+            justify-content: center;    
+        }
+    }    
+    
+    
+    .spotify{
+        grid-area: spotify;
+        padding-left: 30px;
+        align-self: center;
+        justify-self: center;
+        padding: 20px;
+    }
+    
+    
+    .botonEnviar{
+        border-radius: $radius-boton;
+        font-family: $tipografia-dos;
+        background-color:$color-negro;
+        color: $color-blanco;
+        padding: $padding-boton;
+        text-align: center;
+        font-size: $fontsize-boton;
+        border: none;
+        &:hover{
+            color: $color-lilaclaro;
+        }
+        
+    }
+    
+    .somostropagrid{
+        grid-area: somostropagrid;
+        color: $color-lilaclaro;
+        font-size: $size-title;
+        background: $color-negro;
+        text-align: center;
+    }
+    .tracking-in-contract {
+        
+                animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                padding: 20px;
+    }
+    
+    
+      @keyframes tracking-in-contract {
+        0% {
+          letter-spacing: 1em;
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.6;
+        }
+        100% {
+          letter-spacing: normal;
+          opacity: 1;
+        }
+    } 
+}
+
+ 
+
+
+
+.cardSection, .cardSection2{
+    display: flex;
+    margin-top: 30px;  
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.textoimgcard{
+    font-size: 20px;
+    text-align: justify;
+    position: absolute;
+    top: 42%;
+    padding: 30px 100px 30px 100px;
+    background: white;
+    width: 100%;
+    opacity: 100%;
+    &:hover{
+        background: #C17ECE;
+       
+        transition: background 0.6s linear;
+    }     
+}
+
+.cardImg {
+    background-image: url(../imagen/PANTALONES.jpg);
+    width: 697px;
+    height: 500px;
+    position: relative;
+}
+
+.cardImg2{
+    background-image: url(../imagen/outfit2.jpg);
+    width: 697px;
+    height: 500px;
+    position: relative;
+    background-size: cover;
+}
+
+.cardText {
+    padding: 100px;
+    ul{
+        text-align: center;
+        font-size: $size-text;  
+        grid-area: cardItems;
+        padding: 0px;
+        li a{
+            color: $color-negro;
+            &:hover{
+                color: $color-lilaclaro;
+            }
+        }
+    }
+}
+
+.cardSection2{
+    flex-direction: row-reverse;
+    
+}
+
+#pie{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: $color-negro;
+    width: 100%;  
+    padding: 30px; 
+    z-index: 500;
+    
+    .iconosfooter{
+        font-size: $size-text;
+    }
+    .textofooter{
+        font-size: 12px;
+    }
+}
+i{
+    color: $color-blanco;
+    padding: 5px;
+    font-size: 25px;
+}
+
+
+@media screen and (max-width:768px){
+    
+    .indexgrid{
+        grid-template-areas: 
+        "newarrivals"
+        "suscribite"
+        "spotify"
+        "somostropagrid";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto);   
+    }
+    .cardSection, .cardSection2{
+        flex-direction: column-reverse;
+    }    
+    .cardImg, .cardImg2{
+        padding-left: 0;
+        width: 100%;
+    }
+    .salegrid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sectionCatalogo,.sectionCatalogo2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+} 
