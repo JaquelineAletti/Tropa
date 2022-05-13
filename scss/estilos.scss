@@ -75,6 +75,16 @@ main{
     }
 }
 
+// --------------MIXIN------------
+
+
+@mixin centrar{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+}
 .indexgrid{
     display: grid;
     grid-template-areas: 
@@ -85,16 +95,13 @@ main{
     .newarrivals{
         grid-area: newarrivals;
         padding: 30px;
-        text-align: center;
-        align-self: center;
+        @include centrar;
         
     }
     .suscribite{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        @include centrar;
         width: 100%;
         grid-area: suscribite;
         background: $gradiente-lila;
@@ -108,8 +115,7 @@ main{
             display: flex;
             flex-direction: row;
             width: 70%;
-            align-items: center;
-            justify-content: center;    
+            @include centrar;    
         }
     }    
     
@@ -117,8 +123,7 @@ main{
     .spotify{
         grid-area: spotify;
         padding-left: 30px;
-        align-self: center;
-        justify-self: center;
+        @include centrar;
         padding: 20px;
     }
     
@@ -167,9 +172,6 @@ main{
     } 
 }
 
- 
-
-
 
 .cardSection, .cardSection2{
     display: flex;
@@ -190,26 +192,27 @@ main{
     opacity: 100%;
     &:hover{
         background: #C17ECE;
-       
         transition: background 0.6s linear;
     }     
 }
 
+// ------------EXTEND-------------
+
+
+%imgindex{
+    width: 697px;
+    height: 500px;
+    position: relative;
+}
 .cardImg {
     background-image: url(../imagen/PANTALONES.jpg);
-    width: 697px;
-    height: 500px;
-    position: relative;
+    @extend %imgindex;
 }
-
 .cardImg2{
     background-image: url(../imagen/outfit2.jpg);
-    width: 697px;
-    height: 500px;
-    position: relative;
+    @extend %imgindex;
     background-size: cover;
 }
-
 .cardText {
     padding: 100px;
     ul{
@@ -217,15 +220,30 @@ main{
         font-size: $size-text;  
         grid-area: cardItems;
         padding: 0px;
-        li a{
-            color: $color-negro;
-            &:hover{
-                color: $color-lilaclaro;
-            }
-        }
+    }
+    ul li{ 
+        color: $color-negro;
     }
 }
 
+
+//---------------MAPA-------------
+ 
+$hoverlinks:(
+jean: #EBAC91, 
+remeras: #CAEB91, 
+camp: #91EBDD , 
+buzos: #D491EB
+);
+a{
+    color: $color-negro;
+}
+@each $hoverlinks, $color in $hoverlinks {
+    .link-card--#{$hoverlinks}:hover {
+        color: $color; 
+        transition: 0.4s;
+    } 
+}
 .cardSection2{
     flex-direction: row-reverse;
     
@@ -254,32 +272,23 @@ i{
 }
 
 
-@media screen and (max-width:768px){
-    
-    .indexgrid{
-        grid-template-areas: 
-        "newarrivals"
-        "suscribite"
-        "spotify"
-        "somostropagrid";
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4,auto);   
-    }
-    .cardSection, .cardSection2{
-        flex-direction: column-reverse;
-    }    
-    .cardImg, .cardImg2{
-        padding-left: 0;
-        width: 100%;
-    }
-    .salegrid {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .sectionCatalogo,.sectionCatalogo2 {
-        display: flex;
-        flex-direction: column;
-    }
-
-} 
+@media screen and (max-width: 768px) {
+  .indexgrid {
+    grid-template-areas: "newarrivals"
+ "suscribite"
+ "spotify"
+ "somostropagrid";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto); }
+  .cardSection, .cardSection2 {
+    flex-direction: column-reverse; }
+  .cardImg, .cardImg2 {
+    padding-left: 0;
+    width: 100%; }
+  .salegrid {
+    display: flex;
+    flex-direction: column; }
+  .sectionCatalogo, .sectionCatalogo2 {
+    display: flex;
+    flex-direction: column; }
+}
