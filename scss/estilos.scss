@@ -2,6 +2,17 @@
 @import "base";
 @import "colores";
 
+// --------------MIXIN------------
+
+
+@mixin centrar{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+}
+
 
 *{
     margin: 0;
@@ -45,7 +56,7 @@ header{
     justify-content: center;
     position: fixed;
     z-index: 500;
-    background-color: rgba(160, 101, 147, 0.5) !important;
+    background: rgba(255, 255, 255, 0.7);
 }
 nav{
     font-family: $tipografia-dos;
@@ -54,6 +65,24 @@ nav{
     margin: 10px;
 }
 
+// --------------MAIN--------------
+.kenburns-top{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-size: cover;
+    width: 100%;
+       
+}
+.title-somostropa{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    color: $color-blanco;
+    opacity: 80%;
+    width: 100%;
+    padding: 20px;
+}
 main{
     font-family: $tipografia-uno; 
     color: $color-negro;
@@ -64,115 +93,194 @@ main{
         margin: 0px;
     }
     h2{
-        font-size: $size-text;
-        text-align: center;
-        background: $color-negro;
-        color: $color-lilaclaro;
-        padding: 20px;
-        justify-content: center;
+        font-size: $size-h2;
         width: 100%;
         margin: 0px;
+        
     }
+    h3{
+        font-size: $size-h3;
+        @include centrar;
+        color: $color-blanco;
+
+    }
+    p{font-family: $tipografia-dos;}
+}
+.iconosfooter{
+    color: $color-blanco;
+    padding: 5px;
+    font-size: 25px;
+}
+.iconomain{
+    color: $color-negro;
+    padding: 5px;
+    font-size: 25px;
+}
+.barraind{
+    background: $color-negro;
+    padding: 10px;
+    font-family: $tipografia-dos;
 }
 
-// --------------MIXIN------------
-
-
-@mixin centrar{
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    justify-self: center;
-    text-align: center;
+.imagenportada{
+    display: flex;
+    flex-direction: column;
 }
+   
 .indexgrid{
     display: grid;
     grid-template-areas: 
-    "newarrivals suscribite spotify"
-    "somostropagrid somostropagrid somostropagrid";
+    "newarrivals suscribite spotify";
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 250px 100px;
-    .newarrivals{
+    grid-template-rows: 1fr;
+    margin: 5px;
+    column-gap: 5px;
+    
+    .title-newarrivals{
         grid-area: newarrivals;
-        padding: 30px;
-        @include centrar;
-        
-    }
-    .suscribite{
-        display: flex;
-        flex-direction: column;
-        @include centrar;
-        width: 100%;
-        grid-area: suscribite;
-        background: $gradiente-lila;
-        padding: 30px;
-        p{
-        font-family: $tipografia-dos;
-        font-size: 15px;
-        padding: 10px;
-        }
-        div{
-            display: flex;
-            flex-direction: row;
-            width: 70%;
-            @include centrar;    
-        }
-    }    
-    
-    
-    .spotify{
-        grid-area: spotify;
-        padding-left: 30px;
-        @include centrar;
-        padding: 20px;
-    }
-    
-    
-    .botonEnviar{
-        border-radius: $radius-boton;
-        font-family: $tipografia-dos;
-        background-color:$color-negro;
-        color: $color-blanco;
-        padding: $padding-boton;
-        text-align: center;
-        font-size: $fontsize-boton;
-        border: none;
+        text-align: center;     
+        padding: 30px;     
+        background-color: $color-blanco;
+        animation-name: bginfinite;
+        @extend %fondoanimaciones;
         &:hover{
-            color: $color-lilaclaro;
-        }
+            background-image: url(../imagen/aw.jpg);
+            background-size: cover;
+        } 
         
     }
     
-    .somostropagrid{
-        grid-area: somostropagrid;
-        color: $color-lilaclaro;
-        font-size: $size-title;
-        background: $color-negro;
-        text-align: center;
-    }
-    .tracking-in-contract {
+    
+    .title-spotify{
+        grid-area: spotify;
+        padding: 30px;
+        animation-name: bginfinitetres; 
+        background-color: $color-blanco;
+        @extend %fondoanimaciones; 
+        &:hover{
+            background-image: url(../imagen/notart.jpg);
+            background-size: cover;
+           
+        } 
         
-                animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-                padding: 20px;
     }
     
+}
+.title-suscribite{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-align-last: center;
+    width: 100%;
+    grid-area: suscribite;
+    padding: 30px;
+    background-color: $color-blanco;
+    animation-name: bginfinitedos; 
+    @extend %fondoanimaciones;
+    &:hover{
+        background-color: $color-naranja;
+    }
     
-      @keyframes tracking-in-contract {
-        0% {
-          letter-spacing: 1em;
-          opacity: 0;
-        }
-        40% {
-          opacity: 0.6;
-        }
-        100% {
-          letter-spacing: normal;
-          opacity: 1;
-        }
-    } 
+    p{
+    font-family: $tipografia-dos;
+    font-size: $size-h3;
+    padding: 7px;
+     
+    }
+    div{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        @include centrar;
+           
+    }
+}
+.botonEnviar{
+    border-radius: $radius-boton;
+    font-family: $tipografia-dos;
+    background-color:$color-negro;
+    color: $color-blanco;
+    padding: $padding-boton;
+    text-align: center;
+    font-size: $fontsize-boton;
+    border: none;
+    &:hover{
+        color: $color-naranja;
+    }
+    
 }
 
 
+    
+    // animaciones index
+
+%fondoanimaciones{
+    background-color: $color-blanco;
+    animation-duration: 1.4s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    &:hover{
+        animation: none;
+        color: $color-blanco;
+        opacity: 100%;
+    }
+}
+
+@keyframes bginfinite {
+    0% {background-color:$color-blanco;}
+    50% {background-color:#CAEB91;}
+    100%{background-color: $color-verde;
+    opacity: 90%;}
+  }
+@keyframes bginfinitedos {
+    0% {background-color:$color-blanco;}
+    50% {background-color:$color-naranja;}
+    100%{background-color:#ee956e;
+    opacity: 90%;}
+  }
+@keyframes bginfinitetres {
+    0% {background-color:$color-blanco;}
+    50% {background-color:$color-amarillo;}
+    100%{background-color: #e7d95d;
+    opacity: 90%;}
+  }
+
+    
+.tracking-in-contract {
+            animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            padding: 20px;
+}
+
+  @keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+} 
+
+$bghover:(
+    newarrivals: #b8f54f, 
+    suscribite: #EBAC91,  
+    spotify: #f8f3ab
+);
+
+@each $bghover, $bgcolor in $bghover {
+    .title-#{$bghover}:hover {
+        background-color: $bgcolor; 
+        transition: 0.6s;
+        
+        
+    } 
+}
 .cardSection, .cardSection2{
     display: flex;
     margin-top: 30px;  
@@ -180,50 +288,56 @@ main{
     align-items: center;
     justify-content: center;
 }
-
+.cardText{
+    padding: 30px;
+}
+.cardItems{
+    text-align: center;
+    font-size: 20px;  
+    padding: 0px;  
+}
+  
 .textoimgcard{
-    font-size: 20px;
+    font-size: $size-h2;
     text-align: justify;
     position: absolute;
-    top: 42%;
-    padding: 30px 100px 30px 100px;
-    background: white;
-    width: 100%;
-    opacity: 100%;
+    background:$color-negro;
+    width: 100%px;
+    opacity: 70%;
+    color: $color-blanco;
     &:hover{
-        background: #C17ECE;
-        transition: background 0.6s linear;
+        background: $color-naranja;
+        transition: 0.6s linear;
+        opacity: 80%;
     }     
+    h3{
+        font-size: 30px;
+    }
 }
-
-// ------------EXTEND-------------
-
 
 %imgindex{
     width: 697px;
     height: 500px;
     position: relative;
+    background-color: #121213;
 }
+
+
+
 .cardImg {
-    background-image: url(../imagen/PANTALONES.jpg);
+    background-image: url(../imagen/jean-png.jpg);
     @extend %imgindex;
+    
 }
 .cardImg2{
-    background-image: url(../imagen/outfit2.jpg);
+    background-image: url(../imagen/jean-pngdos.jpg);
     @extend %imgindex;
     background-size: cover;
 }
-.cardText {
-    padding: 100px;
-    ul{
-        text-align: center;
-        font-size: $size-text;  
-        grid-area: cardItems;
-        padding: 0px;
-    }
-    ul li{ 
-        color: $color-negro;
-    }
+.cardImg3{
+    background-image: url(../imagen/jean-pngmarron.jpg);
+    @extend %imgindex;
+
 }
 
 
@@ -231,9 +345,8 @@ main{
  
 $hoverlinks:(
 jean: #EBAC91, 
-remeras: #CAEB91, 
-camp: #91EBDD , 
-buzos: #D491EB
+remeras: #CAEB91,  
+buzos: #f8f3ab
 );
 a{
     color: $color-negro;
@@ -257,38 +370,218 @@ a{
     width: 100%;  
     padding: 30px; 
     z-index: 500;
-    
-    .iconosfooter{
-        font-size: $size-text;
     }
-    .textofooter{
+    .iconopie{
         font-size: 12px;
+        color: $color-blanco;
+    }
+
+
+/* -----section TIENDA-----*/
+
+.galeriaTienda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img-thumbnail{
+    padding: 20px;
+    border: 0px;
+}
+.card-body{
+    padding: 20px;
+}
+
+.salegrid{
+    display: grid;
+    grid-template-areas:
+    "off galeria"
+    "off galeria2"
+    "off vermas";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr 1fr 100px;
+    padding: 40px;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.off{
+    grid-area: off;
+
+}
+.sectionCatalogo{
+    display: flex;
+    justify-content: space-evenly;
+    grid-area: galeria;
+
+}
+.sectionCatalogo2{
+    display: flex;
+    justify-content: space-evenly;
+    grid-area: galeria2;
+
+}
+button{
+    border-radius: 15px;
+}
+.cardCatalogo, .cardCatalogo2{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;  
+    margin: 15px;
+}
+.cardCatalogo-text {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: $color-blanco;
+    background-color: $color-negro;
+    opacity: 60%;
+    width: 100%;
+    padding: 20px;
+    margin-top: 189px;
+}
+.vermas{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: $size-text;
+    grid-area: vermas;
+    &:hover{
+        color: $color-naranja;
+        transition: 0.4s;
+
     }
 }
-i{
-    color: $color-blanco;
-    padding: 5px;
-    font-size: 25px;
+
+
+.somostropa{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h1{
+        font-size:150px;
+        display: flex;
+        flex-direction: column;
+        color: $color-naranja;
+        overflow: hidden;
+    }
+    p{
+        font-size: $size-text;
+        font-family: $tipografia-dos;
+        text-align: center;
+        padding: 20px;
+        margin: 50px;
+        align-items: center;
+    }
+    
 }
+.divmap{
+    background-color: $color-blanco;
+    color: $color-negro;
+    display: flex;
+    justify-content: center;
+}
+.iconomap{
+    font-size: 150px;
+    color: $color-naranja;
+}
+.divmap-icono{
+    padding: 30px;
+    text-align-last: center;
+    font-family: $tipografia-dos;
+    p{
+        font-size: 20px;
+    }
+}
+.title-nuestrolocales{
+    text-align: center;
+}
+
+// -----------section contacto------------------
+.iconocontacto{
+    font-size: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    .formulario{
+        width: 50%;
+        margin-top: 20px;
+
+    }
+
+}
+
 
 
 @media screen and (max-width: 768px) {
   .indexgrid {
     grid-template-areas: "newarrivals"
- "suscribite"
- "spotify"
- "somostropagrid";
+    "suscribite"
+    "spotify";
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto); }
+    grid-template-rows: repeat(3, auto); 
+    .title-newarrivals{
+        background-color: $color-verde;
+        animation:none;
+        }
+    .title-suscribite{
+        background-color: $color-naranja;
+        animation:none;
+        }
+    .title-spotify{
+        background-color: $color-amarillo;
+        animation:none;
+        }
+    }
   .cardSection, .cardSection2 {
     flex-direction: column-reverse; }
-  .cardImg, .cardImg2 {
-    padding-left: 0;
-    width: 100%; }
+  .cardImg, .cardImg2, .cardImg3 {
+    padding-left: 0; }
   .salegrid {
     display: flex;
     flex-direction: column; }
   .sectionCatalogo, .sectionCatalogo2 {
     display: flex;
     flex-direction: column; }
+    
 }
+/* ------CAROUSEL -----*/
+
+.carousel-item {
+    width: 100%;
+     height: 500px; 
+ }
+ 
+ .carousel-portada{
+     background-size: cover;
+     background-repeat: no-repeat;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .carousel-portada p{
+     font-size:$size-title;
+     color: $color-blanco;
+ }
+ 
+ .carousel-jeans{
+     background-image: url(../imagen/jeansportada.jpg);
+ }
+ 
+ .carousel-remeras{
+     background-image: url(../imagen/fondopared.jpg);
+ }
+ 
+ .carousel-buzos{
+     background-image: url(../imagen/fondochapaoxido.jpg);
+ }
+ 
+ .carousel-camperas{
+     background-image: url(../imagen/fondocementonegro.jpg);
+ }

@@ -36,7 +36,7 @@ header {
   justify-content: center;
   position: fixed;
   z-index: 500;
-  background-color: rgba(160, 101, 147, 0.5) !important; }
+  background: rgba(255, 255, 255, 0.7); }
 
 nav {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -44,91 +44,169 @@ nav {
   width: 90%;
   margin: 10px; }
 
+.kenburns-top {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-size: cover;
+  width: 100%; }
+
+.title-somostropa {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  color: #e9e6e6;
+  opacity: 80%;
+  width: 100%;
+  padding: 20px; }
+
 main {
   font-family: impact;
   color: #1F1C1E;
   padding-top: 79px; }
   main h1 {
-    font-size: 40px;
+    font-size: 60px;
     font-family: impact;
     margin: 0px; }
   main h2 {
-    font-size: 20px;
-    text-align: center;
-    background: #1F1C1E;
-    color: #63446b;
-    padding: 20px;
-    justify-content: center;
+    font-size: 40px;
     width: 100%;
     margin: 0px; }
+  main h3 {
+    font-size: 15px;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    color: #e9e6e6; }
+  main p {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+.iconosfooter {
+  color: #e9e6e6;
+  padding: 5px;
+  font-size: 25px; }
+
+.iconomain {
+  color: #1F1C1E;
+  padding: 5px;
+  font-size: 25px; }
+
+.barraind {
+  background: #1F1C1E;
+  padding: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+.imagenportada {
+  display: flex;
+  flex-direction: column; }
 
 .indexgrid {
   display: grid;
-  grid-template-areas: "newarrivals suscribite spotify" "somostropagrid somostropagrid somostropagrid";
+  grid-template-areas: "newarrivals suscribite spotify";
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 250px 100px; }
-  .indexgrid .newarrivals {
+  grid-template-rows: 1fr;
+  margin: 5px;
+  column-gap: 5px; }
+  .indexgrid .title-newarrivals {
     grid-area: newarrivals;
+    text-align: center;
     padding: 30px;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    justify-self: center;
-    text-align: center; }
-  .indexgrid .suscribite {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    justify-self: center;
-    text-align: center;
-    width: 100%;
-    grid-area: suscribite;
-    background: linear-gradient(0deg, #1f0837 0%, #c17ece 66%, #c17ece 100%);
-    padding: 30px; }
-    .indexgrid .suscribite p {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 15px;
-      padding: 10px; }
-    .indexgrid .suscribite div {
-      display: flex;
-      flex-direction: row;
-      width: 70%;
-      align-items: center;
-      align-self: center;
-      justify-content: center;
-      justify-self: center;
-      text-align: center; }
-  .indexgrid .spotify {
+    background-color: #e9e6e6;
+    animation-name: bginfinite; }
+    .indexgrid .title-newarrivals:hover {
+      background-image: url(../imagen/aw.jpg);
+      background-size: cover; }
+  .indexgrid .title-spotify {
     grid-area: spotify;
-    padding-left: 30px;
+    padding: 30px;
+    animation-name: bginfinitetres;
+    background-color: #e9e6e6; }
+    .indexgrid .title-spotify:hover {
+      background-image: url(../imagen/notart.jpg);
+      background-size: cover; }
+
+.title-suscribite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-align-last: center;
+  width: 100%;
+  grid-area: suscribite;
+  padding: 30px;
+  background-color: #e9e6e6;
+  animation-name: bginfinitedos; }
+  .title-suscribite:hover {
+    background-color: #f3a26c; }
+  .title-suscribite p {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    padding: 7px; }
+  .title-suscribite div {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
     align-items: center;
     align-self: center;
     justify-content: center;
     justify-self: center;
-    text-align: center;
-    padding: 20px; }
-  .indexgrid .botonEnviar {
-    border-radius: 15px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1F1C1E;
-    color: #e9e6e6;
-    padding: 5px 15px 5px 15px;
-    text-align: center;
-    font-size: 1.3rem;
-    border: none; }
-    .indexgrid .botonEnviar:hover {
-      color: #63446b; }
-  .indexgrid .somostropagrid {
-    grid-area: somostropagrid;
-    color: #63446b;
-    font-size: 40px;
-    background: #1F1C1E;
     text-align: center; }
-  .indexgrid .tracking-in-contract {
-    animation: tracking-in-contract 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    padding: 20px; }
+
+.botonEnviar {
+  border-radius: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1F1C1E;
+  color: #e9e6e6;
+  padding: 5px 15px 5px 15px;
+  text-align: center;
+  font-size: 1.3rem;
+  border: none; }
+  .botonEnviar:hover {
+    color: #f3a26c; }
+
+.indexgrid .title-newarrivals, .indexgrid .title-spotify, .title-suscribite {
+  background-color: #e9e6e6;
+  animation-duration: 1.4s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; }
+  .indexgrid .title-newarrivals:hover, .indexgrid .title-spotify:hover, .title-suscribite:hover {
+    animation: none;
+    color: #e9e6e6;
+    opacity: 100%; }
+
+@keyframes bginfinite {
+  0% {
+    background-color: #e9e6e6; }
+  50% {
+    background-color: #CAEB91; }
+  100% {
+    background-color: #b6f548;
+    opacity: 90%; } }
+
+@keyframes bginfinitedos {
+  0% {
+    background-color: #e9e6e6; }
+  50% {
+    background-color: #f3a26c; }
+  100% {
+    background-color: #ee956e;
+    opacity: 90%; } }
+
+@keyframes bginfinitetres {
+  0% {
+    background-color: #e9e6e6; }
+  50% {
+    background-color: #f5ec77; }
+  100% {
+    background-color: #e7d95d;
+    opacity: 90%; } }
+
+.tracking-in-contract {
+  animation: tracking-in-contract 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  padding: 20px; }
 
 @keyframes tracking-in-contract {
   0% {
@@ -140,6 +218,18 @@ main {
     letter-spacing: normal;
     opacity: 1; } }
 
+.title-newarrivals:hover {
+  background-color: #b8f54f;
+  transition: 0.6s; }
+
+.title-suscribite:hover {
+  background-color: #EBAC91;
+  transition: 0.6s; }
+
+.title-spotify:hover {
+  background-color: #f8f3ab;
+  transition: 0.6s; }
+
 .cardSection, .cardSection2 {
   display: flex;
   margin-top: 30px;
@@ -147,40 +237,44 @@ main {
   align-items: center;
   justify-content: center; }
 
-.textoimgcard {
+.cardText {
+  padding: 30px; }
+
+.cardItems {
+  text-align: center;
   font-size: 20px;
+  padding: 0px; }
+
+.textoimgcard {
+  font-size: 40px;
   text-align: justify;
   position: absolute;
-  top: 42%;
-  padding: 30px 100px 30px 100px;
-  background: white;
-  width: 100%;
-  opacity: 100%; }
+  background: #1F1C1E;
+  width: 100%px;
+  opacity: 70%;
+  color: #e9e6e6; }
   .textoimgcard:hover {
-    background: #C17ECE;
-    transition: background 0.6s linear; }
+    background: #f3a26c;
+    transition: 0.6s linear;
+    opacity: 80%; }
+  .textoimgcard h3 {
+    font-size: 30px; }
 
-.cardImg, .cardImg2 {
+.cardImg, .cardImg2, .cardImg3 {
   width: 697px;
   height: 500px;
-  position: relative; }
+  position: relative;
+  background-color: #121213; }
 
 .cardImg {
-  background-image: url(../imagen/PANTALONES.jpg); }
+  background-image: url(../imagen/jean-png.jpg); }
 
 .cardImg2 {
-  background-image: url(../imagen/outfit2.jpg);
+  background-image: url(../imagen/jean-pngdos.jpg);
   background-size: cover; }
 
-.cardText {
-  padding: 100px; }
-  .cardText ul {
-    text-align: center;
-    font-size: 20px;
-    grid-area: cardItems;
-    padding: 0px; }
-  .cardText ul li {
-    color: #1F1C1E; }
+.cardImg3 {
+  background-image: url(../imagen/jean-pngmarron.jpg); }
 
 a {
   color: #1F1C1E; }
@@ -193,12 +287,8 @@ a {
   color: #CAEB91;
   transition: 0.4s; }
 
-.link-card--camp:hover {
-  color: #91EBDD;
-  transition: 0.4s; }
-
 .link-card--buzos:hover {
-  color: #D491EB;
+  color: #f8f3ab;
   transition: 0.4s; }
 
 .cardSection2 {
@@ -212,29 +302,175 @@ a {
   width: 100%;
   padding: 30px;
   z-index: 500; }
-  #pie .iconosfooter {
-    font-size: 20px; }
-  #pie .textofooter {
-    font-size: 12px; }
 
-i {
+.iconopie {
+  font-size: 12px;
+  color: #e9e6e6; }
+
+/* -----section TIENDA-----*/
+.galeriaTienda {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.img-thumbnail {
+  padding: 20px;
+  border: 0px; }
+
+.card-body {
+  padding: 20px; }
+
+.salegrid {
+  display: grid;
+  grid-template-areas: "off galeria" "off galeria2" "off vermas";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr 1fr 100px;
+  padding: 40px;
+  row-gap: 20px;
+  column-gap: 20px; }
+
+.off {
+  grid-area: off; }
+
+.sectionCatalogo {
+  display: flex;
+  justify-content: space-evenly;
+  grid-area: galeria; }
+
+.sectionCatalogo2 {
+  display: flex;
+  justify-content: space-evenly;
+  grid-area: galeria2; }
+
+button {
+  border-radius: 15px; }
+
+.cardCatalogo, .cardCatalogo2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin: 15px; }
+
+.cardCatalogo-text {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
   color: #e9e6e6;
-  padding: 5px;
-  font-size: 25px; }
+  background-color: #1F1C1E;
+  opacity: 60%;
+  width: 100%;
+  padding: 20px;
+  margin-top: 189px; }
+
+.vermas {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  font-size: 20px;
+  grid-area: vermas; }
+  .vermas:hover {
+    color: #f3a26c;
+    transition: 0.4s; }
+
+.somostropa {
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .somostropa h1 {
+    font-size: 150px;
+    display: flex;
+    flex-direction: column;
+    color: #f3a26c;
+    overflow: hidden; }
+  .somostropa p {
+    font-size: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 50px;
+    align-items: center; }
+
+.divmap {
+  background-color: #e9e6e6;
+  color: #1F1C1E;
+  display: flex;
+  justify-content: center; }
+
+.iconomap {
+  font-size: 150px;
+  color: #f3a26c; }
+
+.divmap-icono {
+  padding: 30px;
+  text-align-last: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+  .divmap-icono p {
+    font-size: 20px; }
+
+.title-nuestrolocales {
+  text-align: center; }
+
+.iconocontacto {
+  font-size: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column; }
+  .iconocontacto .formulario {
+    width: 50%;
+    margin-top: 20px; }
 
 @media screen and (max-width: 768px) {
   .indexgrid {
-    grid-template-areas: "newarrivals" "suscribite" "spotify" "somostropagrid";
+    grid-template-areas: "newarrivals" "suscribite" "spotify";
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto); }
+    grid-template-rows: repeat(3, auto); }
+    .indexgrid .title-newarrivals {
+      background-color: #b6f548;
+      animation: none; }
+    .indexgrid .title-suscribite {
+      background-color: #f3a26c;
+      animation: none; }
+    .indexgrid .title-spotify {
+      background-color: #f5ec77;
+      animation: none; }
   .cardSection, .cardSection2 {
     flex-direction: column-reverse; }
-  .cardImg, .cardImg2 {
-    padding-left: 0;
-    width: 100%; }
+  .cardImg, .cardImg2, .cardImg3 {
+    padding-left: 0; }
   .salegrid {
     display: flex;
     flex-direction: column; }
   .sectionCatalogo, .sectionCatalogo2 {
     display: flex;
     flex-direction: column; } }
+
+/* ------CAROUSEL -----*/
+.carousel-item {
+  width: 100%;
+  height: 500px; }
+
+.carousel-portada {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.carousel-portada p {
+  font-size: 60px;
+  color: #e9e6e6; }
+
+.carousel-jeans {
+  background-image: url(../imagen/jeansportada.jpg); }
+
+.carousel-remeras {
+  background-image: url(../imagen/fondopared.jpg); }
+
+.carousel-buzos {
+  background-image: url(../imagen/fondochapaoxido.jpg); }
+
+.carousel-camperas {
+  background-image: url(../imagen/fondocementonegro.jpg); }
