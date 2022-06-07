@@ -22,10 +22,8 @@
 
 html{
     font-size: 62.5%;   
-}
-body{
-    background: $color-blanco;   
-}
+} 
+
 a {
     text-decoration: none;
 }
@@ -56,14 +54,16 @@ header{
     justify-content: center;
     position: fixed;
     z-index: 500;
-    background: rgba(255, 255, 255, 0.7);
+    background:$naranja-op;
+    ;
 }
 nav{
     font-family: $tipografia-dos;
     font-size: $size-text; 
     width: 90%;
     margin: 10px;
-}
+    
+    }
 
 // --------------MAIN--------------
 .kenburns-top{
@@ -146,7 +146,13 @@ main{
         &:hover{
             background-image: url(../imagen/aw.jpg);
             background-size: cover;
+            
         } 
+        a{
+        &:hover{
+            color: $color-blanco;
+        }  
+        }
         
     }
     
@@ -184,7 +190,6 @@ main{
     
     p{
     font-family: $tipografia-dos;
-    font-size: $size-h3;
     padding: 7px;
      
     }
@@ -294,22 +299,21 @@ $bghover:(
 .cardItems{
     text-align: center;
     font-size: 20px;  
-    padding: 0px;  
+    padding: 0px;
+    a{
+        &:hover{
+            color: $color-naranja;
+        }
+    }  
 }
   
 .textoimgcard{
     font-size: $size-h2;
     text-align: justify;
-    position: absolute;
-    background:$color-negro;
-    width: 100%px;
-    opacity: 70%;
+    background:$naranja-op;
+    padding: 0px 40px 0px 40px;
     color: $color-blanco;
-    &:hover{
-        background: $color-naranja;
-        transition: 0.6s linear;
-        opacity: 80%;
-    }     
+       
     h3{
         font-size: 30px;
     }
@@ -327,16 +331,25 @@ $bghover:(
 .cardImg {
     background-image: url(../imagen/jean-png.jpg);
     @extend %imgindex;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: $naranja-op;
     
 }
 .cardImg2{
-    background-image: url(../imagen/jean-pngdos.jpg);
+    background-image: url(../imagen/top1.jpg);
     @extend %imgindex;
     background-size: cover;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-color: $naranja-op;
 }
 .cardImg3{
-    background-image: url(../imagen/jean-pngmarron.jpg);
+    background-image: url(../imagen/buzo-pngnegro.jpg);
     @extend %imgindex;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: $naranja-op;
 
 }
 
@@ -385,15 +398,36 @@ a{
     align-items: center;
 
 }
+.carousel-portada{
 
+    h1{color: $color-blanco;
+    &:hover{
+        color: $color-negro;
+        opacity: 80%;
+    }
+}
+}
 .img-thumbnail{
     padding: 20px;
     border: 0px;
 }
 .card-body{
     padding: 20px;
+
 }
 
+.pagesh3{
+    color: $color-naranja;
+    font-size: 20px;
+    padding: 20px 0px 20px 40px;
+
+}
+.newarribals-tienda{
+    padding: 20px;
+    text-align: center;
+    color: $color-verde;
+
+}
 .salegrid{
     display: grid;
     grid-template-areas:
